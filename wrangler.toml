@@ -1,0 +1,9 @@
+name = "law-ingestion"
+main = "index.js"
+compatibility_date = "2023-12-27"
+workers_dev = false
+
+[vars]
+ARM_TENANT_ID = "40a009eb-76f8-4d32-bca3-893aaebd0f41"
+ARM_CLIENT_ID = "cd96fd2a-8b49-4df0-bd0c-8d396d97c259"
+DCE_URL = "https://cloudflare-logging-asu8.westeurope-1.ingest.monitor.azure.com/dataCollectionRules/dcr-1e5cc3ed115842ecb647b43f4d8bafef/streams/Custom-CloudflareLogging_CL?api-version=2023-01-01"
