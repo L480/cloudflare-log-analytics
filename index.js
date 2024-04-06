@@ -1,7 +1,7 @@
 export default {
     async tail(events, env, ctx) {
-        const tokenEndpoint = 'https://login.microsoftonline.com/' + env.ARM_TENANT_ID + '/oauth2/v2.0/token';
-        const tokenBody = 'client_id=' + env.ARM_CLIENT_ID + '&scope=https://monitor.azure.com/.default&client_secret=' + env.ARM_CLIENT_SECRET + '&grant_type=client_credentials';
+        const tokenEndpoint = `https://login.microsoftonline.com/${env.ARM_TENANT_ID}/oauth2/v2.0/token`;
+        const tokenBody = `client_id=${env.ARM_CLIENT_ID}&scope=https://monitor.azure.com/.default&client_secret=${env.ARM_CLIENT_SECRET}&grant_type=client_credentials`;
         const ingestEndpoint = env.DCE_URL;
 
         async function gatherResponse(response) {
@@ -31,7 +31,7 @@ export default {
             body: JSON.stringify(events),
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer ' + tokenResponse.access_token,
+                'Authorization': `Bearer ${tokenResponse.access_token}`,
                 'Content-Type': 'application/json',
             }
         });
